@@ -1,4 +1,4 @@
-from sqlalchemy import Column, String, Integer, DateTime
+from sqlalchemy import Column, String, Integer, DateTime, BigInteger
 
 from sqlalchemy.sql import func
 
@@ -16,7 +16,7 @@ class RequestedWallet(Base):
 
     id = Column(Integer, primary_key=True, index=True)
     address = Column(String, nullable=False)
-    balance = Column(Integer, nullable=False)
+    balance = Column(BigInteger, nullable=False)
     bandwidth = Column(Integer, nullable=False)
     energy = Column(Integer, nullable=False)
     created_at = Column(DateTime, default=func.now())
